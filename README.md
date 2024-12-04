@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# Pokédex - Projeto React com PokéAPI e Tailwind CSS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Visão Geral
+Este é um projeto de Pokédex desenvolvido em React, utilizando a **PokéAPI** para buscar dados de Pokémon e **Tailwind CSS** para estilização. A Pokédex permite:
 
-## Available Scripts
+- Listar Pokémon com seus nomes, imagens e tipos.
+- Filtrar Pokémon por tipo.
+- Ordenar Pokémon por nome ou tipo.
+- Carregar dados dinâmicos diretamente da PokéAPI.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Requisitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Certifique-se de ter os seguintes itens instalados:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Node.js** (versão 14 ou superior)
+2. **npm** ou **yarn** (gerenciador de pacotes)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Configuração do Ambiente
 
-### `npm run build`
+### 1. Clonar o Repositório
+```bash
+git clone <URL_DO_REPOSITORIO>
+cd pokedex
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Instalar Dependências
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Estrutura do Projeto
 
-### `npm run eject`
+```
+/
+|-- public/               # Arquivos públicos
+|-- src/
+    |-- components/       # Componentes React
+        |-- Pokedex.js    # Componente principal da Pokédex
+        |-- PokemonCard.js # Exibe informações individuais de cada Pokémon
+    |-- App.js            # Componente raiz
+    |-- index.css          # Configurações globais do Tailwind CSS
+    |-- index.Js         # Ponto de entrada
+|-- tailwind.config.js    # Configuração do Tailwind
+|-- package.json          # Configurações do projeto e dependências
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Configuração do Tailwind CSS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Instalar o Tailwind CSS
+Execute o seguinte comando para instalar o Tailwind CSS e suas dependências:
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. Configurar o `tailwind.config.js`
+Edite o arquivo `tailwind.config.js`:
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
 
-## Learn More
+### 3. Atualizar o `index.css`
+Substitua o conteúdo do arquivo `src/index.css`:
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Scripts Disponíveis
 
-### Code Splitting
+### 1. Iniciar o Servidor de Desenvolvimento
+Para iniciar o projeto em modo de desenvolvimento:
+```bash
+npm start
+```
+Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Funcionalidades
 
-### Making a Progressive Web App
+### 1. Listar Pokémon
+Os Pokémon são exibidos com os seguintes dados:
+- Nome
+- Imagem (sprite)
+- Tipo(s)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 2. Filtrar por Tipo
+O usuário pode selecionar um tipo de Pokémon no dropdown para filtrar a lista.
 
-### Advanced Configuration
+### 3. Ordenar por Nome ou Tipo
+Os Pokémon podem ser ordenados alfabeticamente por:
+- Nome
+- Tipo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 4. Carregar Dados da PokéAPI
+Os dados dos Pokémon são carregados dinamicamente da PokéAPI:
+- URL base: [https://pokeapi.co/api/v2/](https://pokeapi.co/api/v2/)
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Componentes
 
-### `npm run build` fails to minify
+### 1. `Pokedex.js`
+- Gerencia a lista de Pokémon, aplica filtros e ordenações.
+- Usa estados para:
+  - Tipo selecionado.
+  - Critério de ordenação.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 2. `PokemonCard.js`
+- Exibe informações individuais de cada Pokémon, incluindo:
+  - Nome
+  - Imagem
+  - Tipo(s)
+
+
+Com estas instruções, o projeto estará pronto para ser configurado e executado com todas as funcionalidades descritas. Se precisar de ajuda, é só perguntar! 🚀
