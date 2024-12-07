@@ -28,7 +28,7 @@ const PokemonCard = ({ name, url }) => {
   }
 
   return (
-    <div className="bg-zinc-400 shadow-md border-2 border-blue-500 rounded-lg p-5 text-center transform transition-transform hover:scale-105">
+    <div className="bg-slate-200 shadow-md border-2 border-orange-500 rounded-lg p-5 text-center transform transition-transform hover:scale-105">
       <img
         src={pokemonData.sprites.front_default}
         alt={name}

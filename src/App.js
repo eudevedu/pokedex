@@ -3,8 +3,8 @@ import Pokedex from './components/pokedex';
 
 function App() {
   return (
-    <div className="bg-slate-800 min-h-screen p-5">
-      <h1 className="text-4xl font-bold text-blue-500 text-center mb-5">Pokedex do Edu</h1>
+    <div className="bg-neutral-300 min-h-screen p-5">
+      <h1 className="text-4xl font-bold text-orange-500 text-center mb-5">Pokedex do Edu</h1>
       <Pokedex />
     </div>
   );
