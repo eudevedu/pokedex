@@ -93,7 +93,6 @@ Para iniciar o projeto em modo de desenvolvimento:
 ```bash
 npm start
 ```
-Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
 
 ---
