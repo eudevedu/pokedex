@@ -115,7 +115,7 @@ const Pokedex = () => {
       </div>
 
       {/* Pokémon Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 w-full max-w-4xl">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 w-full max-w-6xl">
         {loading ? (
           <p className="col-span-full text-center text-gray-600">Carregando...</p>
         ) : (
