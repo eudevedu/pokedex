@@ -88,12 +88,12 @@ const Pokedex = () => {
         <input
           type="text"
           placeholder="Pesquisar Pokémon"
-          className="p-2 border-2 border-blue-500 rounded-md bg-white w-full"
+          className="p-2 border-2 border-orange-500 rounded-md bg-white w-full"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         <select
-          className="p-2 border-2 border-blue-500 rounded-md bg-white w-full sm:w-auto"
+          className="p-2 border-2 border-orange-500 rounded-md bg-white w-full sm:w-auto"
           value={selectedType}
           onChange={(e) => setSelectedType(e.target.value)}
         >
