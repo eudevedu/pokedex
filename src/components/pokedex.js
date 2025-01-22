@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PokemonCard from './PokemonCard';
 
-const API_BASE_URL = 'https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0';
+const API_BASE_URL = 'https://pokeapi.co/api/v2/pokemon?limit=200';
 const API_BASE_URL_TYPE = 'https://pokeapi.co/api/v2/type';
 
 const Pokedex = () => {
@@ -82,18 +82,27 @@ const Pokedex = () => {
   );
 
   return (
-    <div className="flex flex-col items-center px-4">
+    <div 
+      className="flex flex-col items-center px-4 relative" 
+      style={{ 
+        backgroundImage: 'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png)', 
+        backgroundSize: 'cover', 
+        backgroundRepeat: 'no-repeat', 
+        backgroundPosition: 'center', 
+        opacity: 0.45
+      }}
+    >
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-5 mb-5 w-full max-w-md">
         <input
           type="text"
           placeholder="Pesquisar Pokémon"
-          className="p-2 border-2 border-orange-500 rounded-md bg-white w-full"
+          className="p-2 border-2 border-blue-500 rounded-md bg-white w-full"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         <select
-          className="p-2 border-2 border-orange-500 rounded-md bg-white w-full sm:w-auto"
+          className="p-2 border-2 border-blue-500 rounded-md bg-white w-full sm:w-auto"
           value={selectedType}
           onChange={(e) => setSelectedType(e.target.value)}
         >
@@ -105,7 +114,7 @@ const Pokedex = () => {
           ))}
         </select>
         <select
-          className="p-2 border-2 border-orange-500 rounded-md bg-white w-full sm:w-auto"
+          className="p-2 border-2 border-blue-500 rounded-md bg-white w-full sm:w-auto"
           value={selectedSort}
           onChange={(e) => setSelectedSort(e.target.value)}
         >
