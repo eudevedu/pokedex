@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PokemonCard from './PokemonCard';
 
-const API_BASE_URL = 'https://pokeapi.co/api/v2/pokemon?limit=300&offset=0';
+const API_BASE_URL = 'https://pokeapi.co/api/v2/pokemon?limit=200';
 const API_BASE_URL_TYPE = 'https://pokeapi.co/api/v2/type';
 
 const Pokedex = () => {
