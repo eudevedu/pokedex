@@ -1,5 +1,6 @@
 import React from 'react';
 import Pokedex from './components/pokedex';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
   return (
